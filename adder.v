@@ -9,7 +9,7 @@ module adder(a, b, cin, q, cout);
     // Module operations
 
     /* SUM operation */
-    assign sum = a ^ b ^ cin;
+    assign q = a ^ b ^ cin;
 
     /* CARRY-OUT operation */
     assign cout = (a & b) | (cin & a) | (cin & b);
