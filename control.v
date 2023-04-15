@@ -38,5 +38,25 @@ module control(clk, enb, modo, A, B, Q, RCO);
     subractor sub3(.a(A[2]), .b(B[2]), .q(SUB_Q[2]), bin(SUB_COUT[1]), bout(SUB_COUT[2]));
     subractor sub4(.a(A[3]), .b(B[3]), .q(SUB_Q[3]), bin(SUB_COUT[2]), bout(SUB_COUT[3]));
 
+    always @(posedge clk) 
+        
+        if (enb == 1'b1) begin
 
+          if (modo == 2'b01) begin
+            Q <= ADD_Q;
+            RCO <= ADD_COUT;
+          end
+
+          if (modo == 2'b10) begin
+            Q <= SUB_Q;
+            RCO <= SUB_COUT;
+          end
+
+          if (modo == 2'b11) begin
+            Q <= 0;
+            RCO <= 0;
+          end
+
+        end
+  
 endmodule
