@@ -1,4 +1,4 @@
-module adder(a, b, cin, q, cout);
+module adder(a, b, q, cin, cout);
 
     // Module inputs
     input a, b, cin;
